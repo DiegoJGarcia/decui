@@ -1,0 +1,81 @@
+@import 'assets/vars';
+
+.code {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+
+	user-select: none;
+
+	border-radius: 0 0 0 20px;
+
+	overflow-y: auto;
+
+	position: relative;
+
+	#wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+	}
+
+	#child {
+		padding-left: 20px;
+		color: whitesmoke;
+	}
+	
+	#name {
+		color: #62d2f7;
+	}
+	
+	#prop {
+		color: #7cde4f;
+	}
+	
+	#equal {
+		color: #ce4343;
+	}		
+	
+	#ticks {
+		color: #e2cb4a;
+	}
+	
+	#value {
+		position: relative;
+		background: rgba(27, 26, 26, 0.385);
+		border: .5px solid #e2cb4a71;
+		border-radius: 2px;
+		color: #e2cb4a;
+		font-size: small;
+	}
+
+	#disabled {
+		color: #e2cb4a;
+		font-size: small;
+	}
+	
+	&--open, &--close {
+		color: white;
+	}
+	
+	&--props {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		
+		gap: 5px;
+		padding-left: 20px;
+
+		#prop {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			gap: 5px;
+
+		}
+	}
+}

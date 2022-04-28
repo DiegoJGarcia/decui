@@ -1,0 +1,27 @@
+@import "assets/vars";
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	position: relative;
+	width: stretch;
+	padding: 7px 42px;
+
+	z-index: 7;
+
+	background: var(--background_second);
+
+	box-shadow: 0 22px 40px #0e0e0e9f;
+
+	&_user {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		gap: 20px;
+
+	}
+}
+

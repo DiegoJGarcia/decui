@@ -4,13 +4,16 @@ import './Button.scss';
 export type TButtonProps = {
 	onClick?: () => void;
 	disabled?: boolean;
-	children?: ReactElement;
+	className?: string;
+	children?: any;
 };
 
-const Button: FC<TButtonProps> = ({ onClick, disabled, children }): ReactElement => {
+const Button: FC<TButtonProps> = ({ onClick, disabled, className, children }): ReactElement => {
 	return (
 		<button
-			className={`button${disabled ? ' button--disabled' : ''} labeled`}
+			className={`button${disabled ? ' button--disabled' : ''} labeled${
+				className ? ` ${className}` : ''
+			}`}
 			onClick={e => {
 				e?.stopPropagation();
 				onClick && onClick();

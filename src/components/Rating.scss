@@ -1,0 +1,32 @@
+@import "assets/vars";
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 14px;
+  min-width: 170px;
+  height: 30px;
+
+  cursor: pointer;
+  
+  img {
+    width: 27px;
+    height: 27px;
+  }
+  
+  span {
+    transition: 4s;
+    opacity: 0%;
+  }
+  
+  &:hover {
+    span {
+      transition: 1s;
+      opacity: 100%;
+
+    }
+
+  }
+}

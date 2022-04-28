@@ -1,0 +1,70 @@
+@import "assets/vars";
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+  gap: 20px;
+  width: stretch;
+  
+  color: var(--text_color);
+
+  &_head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  &_list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    padding: 20px;
+    width: stretch;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    &--add {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      background-color: transparent;
+      border: var(--border);
+      border-radius: 20px;
+      width: 70px;
+      height: 70px;
+      margin: auto 0;
+      padding: 4px;
+      font-size: 34px;
+      font-weight: 100;
+      transition: .5s;
+      
+      opacity: 40%;
+      
+      &:disabled {
+        border: 1px dashed gray;
+        color: var(--text_color);
+        
+        &:hover {
+          transform: none;
+          cursor: auto;
+          box-shadow: none;
+        }
+      }
+      
+      &:hover {
+        background-color: var(--third);
+        transition: .5s;
+        transform: scale(1.04);
+        box-shadow: 0 0 10px #15151582;
+        opacity: 100%;
+      }
+    }
+  }
+}

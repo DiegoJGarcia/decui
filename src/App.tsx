@@ -19,7 +19,7 @@ const App: FC = (): ReactElement => {
 					<Route
 						key={component.title}
 						path={component.title.toLowerCase()}
-						element={<Playground>{component.element}</Playground>}
+						element={<Playground toCopy={component.toCopy}>{component.element}</Playground>}
 					/>
 				))}
 			</Route>

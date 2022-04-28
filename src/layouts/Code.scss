@@ -8,26 +8,67 @@
 
 	user-select: none;
 
-	border-radius: 0 0 0 20px;
-
 	overflow-y: auto;
 
 	position: relative;
 
-	#wrapper {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 5px;
+	&--wrapper {
+		padding: 50px;		
+		transition: .5s;
+		
+		&--copy {
+			display: none;
+			cursor: pointer;
+			
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			transition: .5s;
+
+			box-sizing: border-box;
+			
+			&:hover {
+				transform: scale(1.1);
+				border: var(--border);
+
+			}
+
+			&:active {
+				transform: scale(.09);
+
+			}
+		}
+
+		&:hover {
+			border: var(--border);
+			border-radius: 20px;
+			transform: scale(1.05);
+	
+			.code--wrapper--copy {
+				display: flex;
+			}
+		}
 	}
 
 	#child {
 		padding-left: 20px;
 		color: whitesmoke;
 	}
+
+	#arrow {
+		color: whitesmoke;
+	}
 	
 	#name {
 		color: #62d2f7;
+	}
+
+	#bool {
+		color: #a16cf0;
 	}
 	
 	#prop {

@@ -14,7 +14,7 @@
 
 	background: var(--background_first);
 	color: var(--text_color);
-	
+
 	&_header {
 		display: flex;
 		justify-content: center;
@@ -39,7 +39,7 @@
 		justify-content: flex-start;
 		align-items: center;
 		
-		background: var(--third);
+		background: var(--first);
 
 		min-width: 200px;
 
@@ -52,7 +52,7 @@
 			position: sticky;
 			top: 0;
 			
-			background: var(--third);
+			background: var(--first);
 			height: 100px;
 			width: stretch;
 		}
@@ -72,7 +72,7 @@
 				justify-content: center;
 				align-items: center;
 				
-				color: var(--second_text_color);
+				color: #1a2f5f;
 				
 				min-height: 50px;
 				width: stretch;
@@ -95,6 +95,25 @@
 		grid-area: data;
 		
 		padding: 40px;
-	}
 
+		* {
+			transition: .4s;
+			transition-timing-function: ease-in;
+
+			button {
+				cursor: pointer;
+			}
+		}
+
+		> div > *:not(h1):not(h2):not(h3):not(h4):not(p):not(img):hover {
+			transform: var(--transform); 
+			box-shadow: var(--box_shadow);
+
+		}
+
+		> div > h1:hover, h2:hover, h3:hover, h4:hover, p:hover {
+			transform: var(--transform_text);
+			text-shadow: var(--text_shadow);
+		}
+	}
 }

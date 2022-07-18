@@ -15,6 +15,9 @@ import Block from './Block';
 import Avatar from './Avatar';
 import Rating from './Rating';
 
+import arrow from 'assets/arrow.svg';
+import arrowBack from 'assets/arrow-back.svg';
+
 export interface IComponent<T> {
 	title: string;
 	counter: number;
@@ -27,15 +30,18 @@ export const components: IComponent<any>[] = [
 		title: 'Card',
 		counter: 1,
 		element: (
-			<Card title="Ejemplo" status="ok" onClick={() => alert('Card clickeada con éxito')}>
-				Título
-				<span>Otro componente</span>
-			</Card>
+			<div>
+				<Card onClick={() => alert('Card clickeada con éxito')}>No Title but children</Card>
+				<Card title="OK status" status="ok">
+					OK
+				</Card>
+				<Card title="WARN status" status="warn" />
+				<Card title="ERROR status" status="error" />
+			</div>
 		),
 		toCopy: `
-			<Card title="Ejemplo" status="ok" onClick={() => alert('Card clickeada con éxito')}>
-				Título
-				<span>Otro componente</span>
+			<Card onClick={() => alert('Card clickeada con éxito')}>
+				No Title but children
 			</Card>
 		`,
 	},
@@ -43,21 +49,45 @@ export const components: IComponent<any>[] = [
 		title: 'Selector',
 		counter: 2,
 		element: (
-			<Selector
-				options={['option-1', 'option-2', 'option-3', 'option-4']}
-				selected="option-1"
-				selector={['Primera opción', 'Segunda y mejor', 'La de bronce', 'Última chance']}
-				onClick={() => alert('Button clickeado con éxito')}
-				row={false}
-			/>
+			<div>
+				<Selector
+					options={['1', '2', '3', '4', '5']}
+					selected="2"
+					selector={[
+						'Primera opción',
+						'Segunda y mejor',
+						'La de bronce',
+						'Otra opción',
+						'Última chance',
+					]}
+					onClick={optionSelected => alert(optionSelected)}
+				/>
+				<Selector
+					options={['1', '2', '3', '4', '5']}
+					selected="2"
+					selector={[
+						'Primera opción',
+						'Segunda y mejor',
+						'La de bronce',
+						'Otra opción',
+						'Última chance',
+					]}
+					row
+				/>
+			</div>
 		),
 		toCopy: `
 			<Selector
-				options={['option-1', 'option-2', 'option-3', 'option-4']}
-				selected="option-1"
-				selector={['Primera opción', 'Segunda y mejor', 'La de bronce', 'Última chance']}
-				onClick={() => alert('Button clickeado con éxito')}
-				row={false}
+				options={['1', '2', '3', '4', '5']}
+				selected="2"
+				selector={[
+					'Primera opción',
+					'Segunda y mejor',
+					'La de bronce',
+					'Otra opción',
+					'Última chance',
+				]}
+				onClick={optionSelected => alert(optionSelected)}
 			/>
 		`,
 	},
@@ -65,14 +95,34 @@ export const components: IComponent<any>[] = [
 		title: 'Button',
 		counter: 3,
 		element: (
-			<Button className="extra-classname" onClick={() => alert('Button clicked')}>
-				Copy
-			</Button>
+			<div>
+				<Button type="primary" onClick={() => console.log('Sended')} icon={arrow} async>
+					Send
+				</Button>
+				<Button type="secondary" onClick={() => console.log('Changed')} icon={arrow} async>
+					Are you sure?
+				</Button>
+				<Button
+					type="terciary"
+					onClick={() => console.log('Danger')}
+					icon={arrowBack}
+					flux="back"
+					async
+				>
+					Danger
+				</Button>
+				<Button type="save" onClick={() => console.log('Saved')} icon={arrow} async>
+					Save
+				</Button>
+				<Button type="transparet" onClick={() => console.log('Default')} async>
+					Other action
+				</Button>
+			</div>
 		),
 		toCopy: `
-			<Button className="extra-classname" onClick={() => alert('Button clicked')}>
-				Copy	
-			</Button>	
+			<Button type="primary" onClick={() => console.log('Sended')} icon={arrow} async>
+				Send
+			</Button>
 		`,
 	},
 	{
@@ -82,24 +132,21 @@ export const components: IComponent<any>[] = [
 			<Text
 				className="values"
 				name="fullname"
-				placeholder="Cuál es tu nombre?"
+				placeholder="Escribe algo, esto cambiará!"
 				align="left"
 				label="Texto"
-				value="Cambiame"
-				onChange={(e: any) => alert(e.target.value)}
 				max={44}
-				maxWidth={270}
 			/>
 		),
 		toCopy: `
 			<Text
 				className="values"
 				name="fullname"
-				placeholder="Cuál es tu nombre?"
+				placeholder="Escribe algo, esto cambia internamente"
 				align="left"
 				label="Texto"
-				value="Cambiame"
-				onChange={(e: any) => alert(e.target.value)}
+				// value="Cambiame"
+				// onChange={(e) => algo()}
 				max={44}
 				maxWidth={270}
 			/>

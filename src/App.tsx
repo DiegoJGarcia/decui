@@ -12,14 +12,18 @@ import Home from 'Home';
 const App: FC = (): ReactElement => {
 	return (
 		<Routes>
-			<Route path="/" element={<Layout />}>
+			<Route path="/" element={<Layout headerTitle="DECUI LIBRERIA DE COMPONENTES REACT" />}>
 				<Route index element={<Home />} />
 				{/* change "components" reading [TODO] */}
 				{components.map((component: IComponent<any>) => (
 					<Route
 						key={component.title}
 						path={component.title.toLowerCase()}
-						element={<Playground toCopy={component.toCopy}>{component.element}</Playground>}
+						element={
+							<Playground name={component.title} toCopy={component.toCopy}>
+								{component.element}
+							</Playground>
+						}
 					/>
 				))}
 			</Route>

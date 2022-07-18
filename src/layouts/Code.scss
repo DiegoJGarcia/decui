@@ -11,11 +11,13 @@
 	overflow-y: auto;
 
 	position: relative;
-
+	
 	&--wrapper {
-		padding: 50px;		
+		padding: 20px;
 		transition: .5s;
-		
+
+		overflow: hidden;
+
 		&--copy {
 			display: none;
 			cursor: pointer;

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 
 import './Text.scss';
 
@@ -28,7 +28,7 @@ const Text: FC<TextProps> = ({
 	onChange,
 	readOnly,
 	placeholder,
-	max = 47,
+	max = 24,
 	className,
 	align = 'center',
 	prefix,
@@ -41,6 +41,8 @@ const Text: FC<TextProps> = ({
 	maxWidth,
 	firstFocus,
 }) => {
+	const [text, setText] = useState<string>('');
+
 	const textRef = useRef<any>();
 
 	useEffect(() => {
@@ -50,7 +52,9 @@ const Text: FC<TextProps> = ({
 		textRef.current.style.height = scrollHeight + 'px';
 
 		return;
-	}, [value]);
+	}, [value, text]);
+
+	const innerChange = (e: any) => setText(e.target.value);
 
 	return (
 		<div className="text" onClick={onClick} onBlur={onBlur} style={{ maxWidth: maxWidth + 'px' }}>
@@ -73,10 +77,10 @@ const Text: FC<TextProps> = ({
 					}
 					onKeyPress={e => e.key === 'Enter' && textRef.current.blur()}
 					placeholder={placeholder || name}
-					onChange={onChange}
+					onChange={onChange || innerChange}
 					spellCheck={false}
 					readOnly={readOnly}
-					value={value}
+					value={value || text}
 					maxLength={max}
 				/>
 				{(showFix || (value && suffix)) && <div className="ref text--extra">{suffix}</div>}

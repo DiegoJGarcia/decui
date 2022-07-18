@@ -24,7 +24,7 @@ const Card: FC<TCardProps> = ({ title, status, onClick, className, children }): 
 			}`}
 			onClick={onClick}
 		>
-			<div className="card_data">{children || 'Tarjeta'}</div>
+			<div className="card_data">{children}</div>
 			{title && <div className="card_title subtitles">{title?.toUpperCase()}</div>}
 		</div>
 	);

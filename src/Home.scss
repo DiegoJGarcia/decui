@@ -6,4 +6,10 @@
 	padding: 0 10vw;
 	flex-wrap: wrap;
 	height: stretch;
+
+	&_code {
+		width: 100px;
+		margin-right: 40px;
+		cursor: pointer;
+	}
 }

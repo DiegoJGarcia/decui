@@ -5,20 +5,25 @@ import { components, IComponent } from 'components';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useTheme } from 'hooks/useTheme';
 
-const Layout: FC = (): ReactElement => {
+type TLayout = {
+	headerTitle?: string;
+	styler?: string;
+};
+
+const Layout: FC<TLayout> = ({ headerTitle, styler = 'default' }): ReactElement => {
 	const path = useLocation().pathname;
 	const [theme, changeTheme] = useTheme('dark');
 
 	return (
 		// 3D, glass, movement support [TODO]
-		<div className={`layout ${theme}`}>
+		<div className={`layout ${theme} ${styler}`}>
 			<div className="layout_header">
 				<h1
 					onClick={() => changeTheme(theme === 'light' ? 'dark' : 'light')}
 					title="change-theme-title"
 					className="titles"
 				>
-					DECUI LIBRERIA DE COMPONENTES REACT
+					{headerTitle}
 				</h1>
 			</div>
 			<div className="layout_menu">

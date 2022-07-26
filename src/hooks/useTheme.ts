@@ -9,7 +9,7 @@ export const useTheme = (starter = 'light'): TypeUseThemeResponse => {
 		const currentTheme: string = localStorage.getItem('theme') || starter;
 		setTheme(currentTheme);
 		return;
-	}, []);
+	}, [starter]);
 
 	const changeTheme = (newTheme: string) => {
 		localStorage.setItem('theme', newTheme);

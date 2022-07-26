@@ -5,7 +5,7 @@ import Code from './Code';
 
 type TPlaygroundProps = {
 	name?: string;
-	children?: any;
+	children?: ReactElement;
 	toCopy?: string;
 };
 

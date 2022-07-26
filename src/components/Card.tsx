@@ -9,7 +9,7 @@ export type TCardProps = {
 	onClick?: () => void;
 	// common props
 	className?: string;
-	children?: any;
+	children?: ReactElement;
 	// drag and drop support, you need wrapp cards with <DDContainer> [TODO]
 };
 

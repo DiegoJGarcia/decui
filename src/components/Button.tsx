@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, ReactElement, useEffect, useState } from 'react';
 import './Button.scss';
 
 import error from 'assets/no-back-error.svg';
@@ -9,7 +9,7 @@ type ButtonProps = {
 	className?: string;
 	icon?: string;
 	onClick?: () => void;
-	children?: any;
+	children?: ReactElement;
 	disabled?: boolean;
 	async?: boolean;
 	flux?: string;

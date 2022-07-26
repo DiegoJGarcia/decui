@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 import './Block.scss';
 
 type BlockProps = {
 	title?: string;
-	children?: any;
+	children?: ReactElement;
 };
 
 const Block: FC<BlockProps> = ({ title, children }) => {

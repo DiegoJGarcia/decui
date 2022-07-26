@@ -3,7 +3,7 @@ import './Labeled.scss';
 
 type LabeledProps = {
 	label?: string;
-	input?: any;
+	input?: string;
 	icon?: string;
 	active?: boolean;
 	mirror?: boolean;

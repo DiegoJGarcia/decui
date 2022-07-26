@@ -1,13 +1,12 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { ChangeEventHandler, FC, KeyboardEventHandler, useEffect, useState } from 'react';
 import './Input.scss';
 
 type TypeInput = {
 	name: string;
-	value?: any;
-	default?: any;
-	onChange: (e: any) => void;
-	onBlur?: (e: any) => void;
-	onKeyPress?: (e: any) => void;
+	value?: string;
+	onChange: ChangeEventHandler<HTMLInputElement>;
+	onBlur?: ChangeEventHandler<HTMLInputElement>;
+	onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
 	editable?: boolean;
 	type?: string;
 	label?: string;
@@ -37,7 +36,7 @@ const Input: FC<TypeInput> = ({
 		} else if (value) {
 			type !== 'custom' && setStatus('finish');
 		}
-	}, [error, value]);
+	}, [error, value, type]);
 
 	return (
 		<div

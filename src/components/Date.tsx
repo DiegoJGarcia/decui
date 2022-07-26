@@ -4,9 +4,9 @@ import './Date.scss';
 // import arrowBack from 'view/images/icons/arrow-back.svg';
 // import arrow from 'view/images/icons/arrow.svg';
 
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 
-const Months: any = {
+const Months: Record<string, string> = {
 	january: 'Enero',
 	february: 'Febrero',
 	march: 'Marzo',
@@ -25,15 +25,15 @@ const MonthsList: string[] = Object.keys(Months);
 
 type DateProps = {
 	name?: string;
-	value?: any;
-	onChange: (e: any) => void;
+	value?: Moment | string;
+	onChange: (e: Record<string, unknown>) => void;
 	onClick?: () => void;
 	disabled?: boolean;
 	step?: string;
 	label?: string;
 };
 
-const Date: FC<DateProps> = ({ onChange, onClick, name, value, label }) => {
+const Date: FC<DateProps> = ({ onChange, name, value }) => {
 	const [date, setDate] = useState<Record<string, string | number>>({
 		month: moment(value).format('MMMM').toLowerCase(),
 		year: moment(value).format('YYYY'),
@@ -41,7 +41,7 @@ const Date: FC<DateProps> = ({ onChange, onClick, name, value, label }) => {
 		max: Number(moment(value).format('YYYY')),
 	});
 
-	const change = (subName: string, value: string | any) => {
+	const change = (subName: string, value: string) => {
 		const newDateFixed = { ...date, [subName]: value };
 		setDate(newDateFixed);
 		const newDate = moment(

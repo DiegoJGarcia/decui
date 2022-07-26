@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 import './FlipCard.scss';
 
 type FlipCardProps = {
-	front: any;
-	back: any;
+	front: ReactElement | string | number;
+	back: ReactElement | string | number;
 	frontFace: boolean;
 };
 

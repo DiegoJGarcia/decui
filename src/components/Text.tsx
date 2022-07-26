@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { FC, useEffect, useRef, useState } from 'react';
 
 import './Text.scss';
@@ -5,19 +6,28 @@ import './Text.scss';
 type TextProps = {
 	name: string;
 	label?: string;
-	value?: any;
+	value?: string;
 	placeholder?: string;
 	readOnly?: boolean;
 	onBlur?: () => void;
 	onClick?: () => void;
-	onChange?: (e: any) => void;
+	onChange?: (e: unknown) => void;
 	max?: number;
 	className?: string;
 	align?: string;
 	prefix?: string;
 	suffix?: string;
 	showFix?: boolean;
-	inputmode?: any;
+	inputmode?:
+		| 'text'
+		| 'search'
+		| 'none'
+		| 'tel'
+		| 'url'
+		| 'email'
+		| 'numeric'
+		| 'decimal'
+		| undefined;
 	maxWidth?: number;
 	firstFocus?: boolean;
 };
@@ -46,13 +56,13 @@ const Text: FC<TextProps> = ({
 	const textRef = useRef<any>();
 
 	useEffect(() => {
-		firstFocus && textRef?.current.focus();
+		firstFocus && textRef.current.focus();
 		textRef.current.style.height = '0px';
 		const scrollHeight = textRef.current.scrollHeight;
 		textRef.current.style.height = scrollHeight + 'px';
 
 		return;
-	}, [value, text]);
+	}, [value, text, firstFocus]);
 
 	const innerChange = (e: any) => setText(e.target.value);
 

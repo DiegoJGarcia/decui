@@ -32,7 +32,7 @@ type StatusIconProps = {
 	img?: string;
 	name?: string;
 	experience?: number;
-	onClick?: (exp: any) => void;
+	onClick?: (exp: number) => void;
 	noLabel?: boolean;
 	noIcon?: boolean;
 };
@@ -53,7 +53,7 @@ const StatusIcon: FC<StatusIconProps> = ({
 	}, [experience]);
 
 	const clicked = () => {
-		const newExperience = handleStatus(experience);
+		const newExperience: number = handleStatus(experience);
 		onClick && onClick(newExperience);
 	};
 

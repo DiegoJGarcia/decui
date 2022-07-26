@@ -15,7 +15,7 @@ const App: FC = (): ReactElement => {
 			<Route path="/" element={<Layout headerTitle="DECUI LIBRERIA DE COMPONENTES REACT" />}>
 				<Route index element={<Home />} />
 				{/* change "components" reading [TODO] */}
-				{components.map((component: IComponent<any>) => (
+				{components.map((component: IComponent) => (
 					<Route
 						key={component.title}
 						path={component.title.toLowerCase()}

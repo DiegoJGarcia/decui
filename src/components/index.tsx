@@ -17,15 +17,16 @@ import Rating from './Rating';
 
 import arrow from 'assets/arrow.svg';
 import arrowBack from 'assets/arrow-back.svg';
+import { ReactElement } from 'react';
 
-export interface IComponent<T> {
+export interface IComponent {
 	title: string;
 	counter: number;
-	element: any;
-	toCopy: any;
+	element: ReactElement | string | number;
+	toCopy: string;
 }
 
-export const components: IComponent<any>[] = [
+export const components: IComponent[] = [
 	{
 		title: 'Card',
 		counter: 1,

@@ -31,7 +31,7 @@ const Layout: FC<TLayout> = ({ headerTitle, styler = 'default' }): ReactElement 
 					HOME
 				</Link>
 				<div className="layout_menu_links">
-					{components.map((component: IComponent<unknown>) => (
+					{components.map((component: IComponent) => (
 						<Link
 							className={`layout_menu_links_link labels${
 								path.includes(component.title.toLowerCase())

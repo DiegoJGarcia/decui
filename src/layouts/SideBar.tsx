@@ -1,15 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { FC, ReactElement, useState } from 'react';
 import './SideBar.scss';
 
-// import Labeled from '../components/Labeled';
+import Labeled from '../components/Labeled';
 
 type SideBarProps = {
-	activeSections: unknown[];
-	handleSection: (section: unknown) => void;
+	activeSections: any[];
+	handleSection: (section: any) => void;
 	top?: ReactElement | string | number;
 	bottom?: ReactElement | string | number;
 };
-const SideBar: FC<SideBarProps> = ({ top, bottom }) => {
+const SideBar: FC<SideBarProps> = ({ top, bottom, activeSections, handleSection }) => {
 	const [closed, setClosed] = useState<boolean>(false);
 
 	return (
@@ -18,14 +19,14 @@ const SideBar: FC<SideBarProps> = ({ top, bottom }) => {
 			<div className="sidebar_body">
 				<div className="sidebar_body_title label">Secciones</div>
 				<div className="sidebar_body_sections">
-					{/* {activeSections?.map((section: any) => (
+					{activeSections?.map((section: any) => (
 						<Labeled
 							key={section.name}
 							active={section.active}
 							onClick={() => handleSection(section)}
 							label={section.label?.toUpperCase()}
 						/>
-					))} */}
+					))}
 				</div>
 			</div>
 			<div className="sidebar_bottom">

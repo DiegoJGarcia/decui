@@ -3,7 +3,7 @@ import './Input.scss';
 
 type TypeInput = {
 	name: string;
-	value?: string;
+	value?: string | number;
 	onChange: ChangeEventHandler<HTMLInputElement>;
 	onBlur?: ChangeEventHandler<HTMLInputElement>;
 	onKeyPress?: KeyboardEventHandler<HTMLInputElement>;

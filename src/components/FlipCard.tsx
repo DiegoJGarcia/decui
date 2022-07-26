@@ -2,8 +2,8 @@ import React, { FC, ReactElement } from 'react';
 import './FlipCard.scss';
 
 type FlipCardProps = {
-	front: ReactElement;
-	back: ReactElement;
+	front: ReactElement | string | number;
+	back: ReactElement | string | number;
 	frontFace: boolean;
 };
 

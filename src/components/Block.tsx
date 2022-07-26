@@ -3,7 +3,7 @@ import './Block.scss';
 
 type BlockProps = {
 	title?: string;
-	children?: ReactElement;
+	children?: ReactElement | string | number;
 };
 
 const Block: FC<BlockProps> = ({ title, children }) => {

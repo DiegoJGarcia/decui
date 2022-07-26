@@ -4,7 +4,7 @@ import './Modal.scss';
 type ModalProps = {
 	title?: string;
 	open?: boolean;
-	children?: ReactElement;
+	children?: ReactElement | string | number;
 };
 
 const Modal: FC<ModalProps> = ({ title = 'Piensa antes de actuar', open = false, children }) => {

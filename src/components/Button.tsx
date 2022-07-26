@@ -9,7 +9,7 @@ type ButtonProps = {
 	className?: string;
 	icon?: string;
 	onClick?: () => void;
-	children?: ReactElement;
+	children?: ReactElement | string | number;
 	disabled?: boolean;
 	async?: boolean;
 	flux?: string;

@@ -4,7 +4,7 @@ import './Date.scss';
 // import arrowBack from 'view/images/icons/arrow-back.svg';
 // import arrow from 'view/images/icons/arrow.svg';
 
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 
 const Months: Record<string, string> = {
 	january: 'Enero',
@@ -25,7 +25,7 @@ const MonthsList: string[] = Object.keys(Months);
 
 type DateProps = {
 	name?: string;
-	value?: string;
+	value?: Moment | string;
 	onChange: (e: Record<string, unknown>) => void;
 	onClick?: () => void;
 	disabled?: boolean;

@@ -22,7 +22,7 @@ import { ReactElement } from 'react';
 export interface IComponent {
 	title: string;
 	counter: number;
-	element: ReactElement;
+	element: ReactElement | string | number;
 	toCopy: string;
 }
 

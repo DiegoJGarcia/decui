@@ -32,7 +32,7 @@ type StatusIconProps = {
 	img?: string;
 	name?: string;
 	experience?: number;
-	onClick?: (exp: number) => number;
+	onClick?: (exp: number) => void;
 	noLabel?: boolean;
 	noIcon?: boolean;
 };

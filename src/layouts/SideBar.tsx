@@ -6,8 +6,8 @@ import './SideBar.scss';
 type SideBarProps = {
 	activeSections: unknown[];
 	handleSection: (section: unknown) => void;
-	top?: ReactElement;
-	bottom?: ReactElement;
+	top?: ReactElement | string | number;
+	bottom?: ReactElement | string | number;
 };
 const SideBar: FC<SideBarProps> = ({ top, bottom }) => {
 	const [closed, setClosed] = useState<boolean>(false);

@@ -19,6 +19,7 @@ const SideBar: FC<SideBarProps> = ({ top, bottom, activeSections, handleSection 
 			<div className="sidebar_body">
 				<div className="sidebar_body_title label">Secciones</div>
 				<div className="sidebar_body_sections">
+					{/* [TODO] DEFINIR EL TYPE */}
 					{activeSections?.map((section: any) => (
 						<Labeled
 							key={section.name}
